@@ -1,0 +1,163 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produtos - Mercado Verde</title>
+    <meta name="description" content="Confira todos os produtos frescos do Mercado Verde.">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+
+    <style>
+
+        
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="{% url 'home' %}" class="logo">
+                <img src="{% static 'img/logo.png' %}" alt="Mercado Verde Logo">
+                <span>Mercado Verde</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="{% url 'home' %}">Início</a></li>
+                    <li><a href="{% url 'produtos:lista' %}" class="active">Produtos</a></li>
+                    <li><a href="{% url 'produtos:detalhes' %}">Detalhe</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section>
+        <div class="container">
+            <div class="banner-section">
+                <img src="{% static 'produtos/img/banner.jpeg' %}" alt="Promoções do Mercado Verde - Produtos frescos e saudáveis">
+            </div>
+
+            <h2>Todos os Produtos</h2>
+
+            <div class="filter-bar">
+                <button class="filter-btn active" data-category="todos">Todos</button>
+                <button class="filter-btn" data-category="frutas">🍎 Frutas</button>
+                <button class="filter-btn" data-category="verduras">🥦 Verduras</button>
+                <button class="filter-btn" data-category="carnes">🥩 Carnes</button>
+                <button class="filter-btn" data-category="laticinios">🧀 Laticínios</button>
+                <button class="filter-btn" data-category="padaria">🍞 Padaria</button>
+            </div>
+
+            <div class="products-grid">
+                <div class="product-card" data-category="frutas">
+                    <div class="product-img">🍌</div>
+                    <div class="product-info">
+                        <h3>Banana Prata (kg)</h3>
+                        <div class="price">R$ 4,99</div>
+                        <button class="btn btn-primary btn-add-cart">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+                <div class="product-card" data-category="frutas">
+                    <div class="product-img">🍎</div>
+                    <div class="product-info">
+                        <h3>Maçã Fuji (kg)</h3>
+                        <div class="price">R$ 8,90</div>
+                        <button class="btn btn-primary btn-add-cart">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+                <div class="product-card" data-category="frutas">
+                    <div class="product-img">🍊</div>
+                    <div class="product-info">
+                        <h3>Laranja Pêra (kg)</h3>
+                        <div class="price">R$ 3,99</div>
+                        <button class="btn btn-primary btn-add-cart">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+                <div class="product-card" data-category="verduras">
+                    <div class="product-img">🍅</div>
+                    <div class="product-info">
+                        <h3>Tomate Italiano (kg)</h3>
+                        <div class="price">R$ 7,49</div>
+                        <button class="btn btn-primary btn-add-cart">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+                <div class="product-card" data-category="verduras">
+                    <div class="product-img">🥬</div>
+                    <div class="product-info">
+                        <h3>Alface Crespa (un)</h3>
+                        <div class="price">R$ 2,50</div>
+                        <button class="btn btn-primary btn-add-cart">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+                <div class="product-card" data-category="carnes">
+                    <div class="product-img">🥩</div>
+                    <div class="product-info">
+                        <h3>Picanha (kg)</h3>
+                        <div class="price">R$ 59,90</div>
+                        <button class="btn btn-primary btn-add-cart">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+                <div class="product-card" data-category="carnes">
+                    <div class="product-img">🍗</div>
+                    <div class="product-info">
+                        <h3>Frango Inteiro (kg)</h3>
+                        <div class="price">R$ 12,90</div>
+                        <button class="btn btn-primary btn-add-cart">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+                <div class="product-card" data-category="laticinios">
+                    <div class="product-img">🥛</div>
+                    <div class="product-info">
+                        <h3>Leite Integral (1L)</h3>
+                        <div class="price">R$ 5,29</div>
+                        <button class="btn btn-primary btn-add-cart">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+                <div class="product-card" data-category="laticinios">
+                    <div class="product-img">🧀</div>
+                    <div class="product-info">
+                        <h3>Queijo Minas (300g)</h3>
+                        <div class="price">R$ 14,90</div>
+                        <button class="btn btn-primary btn-add-cart">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+                <div class="product-card" data-category="padaria">
+                    <div class="product-img">🍞</div>
+                    <div class="product-info">
+                        <h3>Pão Francês (kg)</h3>
+                        <div class="price">R$ 13,90</div>
+                        <button class="btn btn-primary btn-add-cart">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h4>Mercado Verde</h4>
+                    <p>Qualidade e frescor desde 2020.</p>
+                </div>
+                <div>
+                    <h4>Links Rápidos</h4>
+                    <a href="{% url 'home' %}">Início</a>
+                    <a href="{% url 'produtos:lista' %}">Produtos</a>
+                </div>
+                <div>
+                    <h4>Contato</h4>
+                    <p>📞 (11) 99999-0000</p>
+                    <p>📧 contato@mercadoverde.com.br</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Mercado Verde. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{% static 'produtos/js/script.js' %}"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>

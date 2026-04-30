@@ -1,5 +1,5 @@
 """
-URL configuration for my_site project.
+URL configuration for mercado project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.2/topics/http/urls/
@@ -15,13 +15,15 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
+from django.shortcuts import render
+# from .views import home
 
-from .views import home
-from .views import sobre
+def home(request):
+    return render(request, 'index.html')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', home,name='home'),
-    path('sobre/', sobre ,name='sobre')
+    path('', home, name='home'),
+    path('produtos/', include('produtos.urls')),
 ]

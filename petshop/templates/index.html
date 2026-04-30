@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}PetShop Patinhas | Início{% endblock title %}
+
+{% block content %}
+<!-- Seção 1: Hero -->
+  <section class="hero">
+    <span class="emoji">🐶🐱</span>
+    <h1>Cuidado e carinho para seu melhor amigo</h1>
+    <p>Banho, tosa, consultas veterinárias e os melhores produtos para o bem-estar do seu pet.</p>
+    <a href="#servicos" class="btn">Conheça nossos serviços</a>
+  </section>
+
+  <!-- Seção 2: Serviços -->
+  <section class="services" id="servicos">
+    <h2>Nossos Serviços</h2>
+    <p class="subtitle">Tudo que seu pet precisa em um só lugar</p>
+    <div class="cards">
+      <div class="card">
+        <div class="icon">🛁</div>
+        <h3>Banho &amp; Tosa</h3>
+        <p>Banho relaxante e tosa profissional com produtos de alta qualidade para todas as raças.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🩺</div>
+        <h3>Veterinário</h3>
+        <p>Consultas, vacinas e exames com veterinários experientes e apaixonados por animais.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🦴</div>
+        <h3>Pet Shop</h3>
+        <p>Rações premium, brinquedos, acessórios e tudo para a saúde e diversão do seu pet.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção 3: CTA -->
+  <section class="cta">
+    <h2>Agende agora mesmo!</h2>
+    <p>Entre em contato pelo WhatsApp e garanta o melhor atendimento para seu companheiro.</p>
+    <a href="#" class="btn">📱 Fale Conosco</a>
+  </section>
+
+{% endblock content %}
