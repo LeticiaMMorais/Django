@@ -1,0 +1,204 @@
+
+.secao-alunos {
+    background: #ffffff;
+    padding: 28px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.secao-alunos h2 {
+    color: #3a7f24;
+    margin-bottom: 20px;
+    border-left: 6px solid #d52b1e;
+    padding-left: 12px;
+    font-size: 1.6rem;
+}
+
+.cabecalho-secao {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+/* ---------- Botões ---------- */
+.botao {
+    display: inline-block;
+    padding: 9px 18px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.2s ease, transform 0.1s ease;
+    color: #ffffff;
+}
+
+.botao:hover {
+    opacity: 0.88;
+    transform: translateY(-1px);
+}
+
+.botao-verde {
+    background-color: #4ca22f;
+}
+
+.botao-vermelho {
+    background-color: #d52b1e;
+}
+
+/* ---------- Tabela ---------- */
+.tabela-alunos {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    font-size: 0.98rem;
+}
+
+.tabela-alunos thead {
+    background-color: #4ca22f;
+    color: #ffffff;
+}
+
+.tabela-alunos th,
+.tabela-alunos td {
+    padding: 12px 14px;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.tabela-alunos tbody tr:nth-child(even) {
+    background-color: #f7faf5;
+}
+
+.tabela-alunos tbody tr:hover {
+    background-color: #fdecea;
+}
+
+/* ---------- Formulário ---------- */
+.formulario-aluno {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 520px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+}
+
+.campo label {
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #3a7f24;
+}
+
+.campo input,
+.campo select {
+    padding: 10px 12px;
+    border: 1px solid #cfcfcf;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.campo input:focus,
+.campo select:focus {
+    outline: none;
+    border-color: #4ca22f;
+    box-shadow: 0 0 0 3px rgba(76, 162, 47, 0.18);
+}
+
+.acoes-formulario {
+    display: flex;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+/* ---------- Perfil do aluno ---------- */
+.perfil-aluno {
+    border: 1px solid #e6e6e6;
+    border-radius: 8px;
+    padding: 24px;
+    background: #fcfcfc;
+}
+
+.perfil-cabecalho {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding-bottom: 18px;
+    border-bottom: 2px solid #d52b1e;
+    margin-bottom: 20px;
+}
+
+.avatar {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #4ca22f, #3a7f24);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+
+.perfil-cabecalho h3 {
+    color: #3a7f24;
+    font-size: 1.4rem;
+}
+
+.subtitulo {
+    color: #777;
+    font-size: 0.9rem;
+}
+
+.perfil-dados {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 10px 20px;
+}
+
+.perfil-dados dt {
+    font-weight: 600;
+    color: #3a7f24;
+}
+
+.perfil-dados dd {
+    color: #2b2b2b;
+}
+
+.badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.badge-verde {
+    background-color: #4ca22f;
+}
+
+/* ---------- Responsivo ---------- */
+@media (max-width: 600px) {
+    .perfil-dados {
+        grid-template-columns: 1fr;
+    }
+    .perfil-dados dt {
+        margin-top: 8px;
+    }
+    .tabela-alunos th,
+    .tabela-alunos td {
+        padding: 8px;
+        font-size: 0.9rem;
+    }
+}

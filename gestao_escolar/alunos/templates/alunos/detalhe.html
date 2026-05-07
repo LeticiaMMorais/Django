@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Detalhes do Aluno - IFRN{% endblock title %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'alunos/css/estilo.css' %}">
+{% endblock extra_css %}
+
+{% block content %}
+<section class="secao-alunos">
+    <h2>Perfil do Aluno</h2>
+
+    <article class="perfil-aluno">
+        <div class="perfil-cabecalho">
+            <div class="avatar">JS</div>
+            <div>
+                <h3>João Silva</h3>
+                <p class="subtitulo">Matrícula: 20260001</p>
+            </div>
+        </div>
+
+        <dl class="perfil-dados">
+            <dt>Curso</dt>
+            <dd>Técnico em Informática</dd>
+
+            <dt>Turma</dt>
+            <dd>3º Ano - Turma A</dd>
+
+            <dt>Campus</dt>
+            <dd>Natal - Central</dd>
+
+            <dt>E-mail institucional</dt>
+            <dd>joao.silva@academico.ifrn.edu.br</dd>
+
+            <dt>Telefone</dt>
+            <dd>(84) 99999-0000</dd>
+
+            <dt>Data de matrícula</dt>
+            <dd>15/02/2024</dd>
+
+            <dt>Situação</dt>
+            <dd><span class="badge badge-verde">Ativo</span></dd>
+        </dl>
+
+        <div class="acoes-formulario">
+            <a href="{% url 'alunos:lista' %}" class="botao botao-vermelho">Voltar</a>
+        </div>
+    </article>
+</section>
+{% endblock content %}

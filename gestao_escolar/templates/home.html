@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Home - Sistema de Gestão Escolar IFRN{% endblock %}
+
+{% block content %}
+<section class="boas-vindas">
+    <h2>Bem-vindo(a) ao Sistema de Gestão Escolar do IFRN!</h2>
+    <p>
+        Esta plataforma foi desenvolvida para facilitar o acompanhamento da vida acadêmica
+        dos estudantes do Instituto Federal do Rio Grande do Norte. Aqui você pode
+        consultar a lista de alunos, cadastrar novos estudantes e visualizar informações
+        detalhadas sobre cada perfil.
+    </p>
+
+    <figure class="imagem-destaque">
+        <img src="{% static 'alunos/img/escola.jpg' %}" alt="Estudantes em sala de aula">
+        <figcaption>Educação pública, gratuita e de qualidade.</figcaption>
+    </figure>
+
+    <div class="cartoes">
+        <div class="cartao">
+            <h3>📚 Gestão Acadêmica</h3>
+            <p>Controle completo da vida escolar dos alunos.</p>
+        </div >
+        <div class="cartao">
+            <h3>👨‍🎓 Cadastro de Alunos</h3>
+            <p>Registre novos estudantes de forma rápida e simples.</p>
+        </div>
+        <div class="cartao">
+            <h3>📊 Informações Detalhadas</h3>
+            <p>Acesse o perfil completo de cada estudante.</p>
+        </div>
+    </div>
+</section>
+{% endblock content %}

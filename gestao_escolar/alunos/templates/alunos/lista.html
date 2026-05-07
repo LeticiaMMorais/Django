@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Lista de Alunos - IFRN{% endblock title %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'alunos/css/estilo.css' %}">
+{% endblock extra_css %}
+
+{% block content %}
+<section class="secao-alunos">
+    <div class="cabecalho-secao">
+        <h2>Lista de Alunos</h2>
+        <a href="{% url 'alunos:novo' %}" class="botao botao-verde">+ Novo Aluno</a>
+    </div>
+
+    <table class="tabela-alunos">
+        <thead>
+            <tr>
+                <th>Matrícula</th>
+                <th>Nome</th>
+                <th>Curso</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>20260001</td>
+                <td>João Silva</td>
+                <td>Informática</td>
+                <td><a href="{% url 'alunos:detalhe' %}" class="botao botao-vermelho">Ver</a></td>
+            </tr>
+            <tr>
+                <td>20260002</td>
+                <td>Maria Souza</td>
+                <td>Apicultura</td>
+                <td><a href="{% url 'alunos:detalhe' %}" class="botao botao-vermelho">Ver</a></td>
+            </tr>
+            <tr>
+                <td>20260003</td>
+                <td>Carlos Oliveira</td>
+                <td>Alimentos</td>
+                <td><a href="{% url 'alunos:detalhe' %}" class="botao botao-vermelho">Ver</a></td>
+            </tr>
+            <tr>
+                <td>20260004</td>
+                <td>Ana Beatriz Lima</td>
+                <td>Informática</td>
+                <td><a href="{% url 'alunos:detalhe' %}" class="botao botao-vermelho">Ver</a></td>
+            </tr>
+            <tr>
+                <td>20260005</td>
+                <td>Pedro Henrique Costa</td>
+                <td>Alimentos</td>
+                <td><a href="{% url 'alunos:detalhe' %}" class="botao botao-vermelho">Ver</a></td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+{% endblock content %}

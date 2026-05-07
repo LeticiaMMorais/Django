@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Sistema de Gestão Escolar - IFRN{% endblock title %}</title>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    {% block extra_css %}{% endblock extra_css %}
+</head>
+<body>
+    <header class="cabecalho">
+        <div class="cabecalho-conteudo">
+            <a href="{% url 'home' %}" class="logo-link">
+                <img src="{% static 'img/ifrn-logo.png' %}" alt="Logo IFRN" class="logo">
+                <div class="titulo-sistema">
+                    <h1>IFRN</h1>
+                    <span>Sistema de Gestão Escolar</span>
+                </div>
+            </a>
+            <nav class="navegacao">
+                <ul>
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li><a href="{% url 'alunos:lista' %}">Lista de Alunos</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="conteudo-principal">
+        {% block content %}
+        {% endblock content %}
+    </main>
+
+    <footer class="rodape">
+        <p>&copy; 2026 Instituto Federal do Rio Grande do Norte - IFRN</p>
+        <p>Projeto acadêmico - Programação para Internet</p>
+    </footer>
+</body>
+</html>
