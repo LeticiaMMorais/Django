@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock title %}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    {% block extrahead %} 
+    {% endblock extrahead %}
+</head>
+<body>
+    <div class="dashboard-layout">
+        <!-- Header Superior -->
+        {% include 'header.html' %}
+
+        <!-- Menu Lateral -->
+        {% include 'aside.html' %}
+
+        <!-- Conteúdo Principal -->
+        <main class="main-content">
+            {% block content %}
+            {% endblock content %}
+        </main>
+    </div>
+</body>
+</html>

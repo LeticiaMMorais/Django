@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Lista de livros{% endblock title %}
+{% block extrahead %}
+    <link rel="stylesheet" href="{% static 'livros/css/lista.css' %}">
+{% endblock extrahead %}
+
+{% block content %}
+    <div class="content-header">
+        <div class="breadcrumb">
+            <a href="{% url 'home' %}">Início</a>
+            <span class="breadcrumb-separator">/</span>
+            <span class="breadcrumb-current">Lista de Livros</span>
+        </div>
+        <h2 class="page-title">Lista de Livros</h2>
+    </div>
+
+    <div class="list-controls">
+        <div class="search-box-container">
+            <input type="text" class="search-box" placeholder="🔍 Buscar itens...">
+        </div>
+        <button class="btn btn-primary btn-add">
+            <span class="btn-icon">➕</span>
+            Adicionar Novo
+        </button>
+    </div>
+
+    <div class="items-container">
+        <!-- Os alunos devem usar um loop para exibir os itens aqui -->
+        <!-- Exemplo de estrutura de um item: -->
+        <div class="item-card">
+            <div class="item-content">
+                <div class="item-header">
+                    <h3 class="item-title">O alquimista</h3>
+                    <span class="item-badge">Romance brasileiro</span>
+                </div>
+                <p class="item-description">Best-seller do autor, "O Alquimista" segue um jovem pastor andaluz em sua viagem ao Egito, depois de ter um sonho recorrente de encontrar tesouro lá.</p>
+                <div class="item-meta">
+                    <span class="meta-item">📅 1988</span>
+                    <span class="meta-item">👤 Paulo Coelho</span>
+                </div>
+            </div>
+            <div class="item-actions">
+                <a href="{% url 'livros:detalhe' %}" class="btn-action btn-view" title="Ver detalhes">
+                    <span>👁️</span>
+                </a>
+                <a href="#" class="btn-action btn-edit" title="Editar">
+                    <span>✏️</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="item-card">
+            <div class="item-content">
+                <div class="item-header">
+                    <h3 class="item-title">Encontro Marcado</h3>
+                    <span class="item-badge">Romance brasileiro</span>
+                </div>
+                <p class="item-description">Em <en>O encontro marcado</en>, o protagonista Eduardo Marciano está numa efetiva busca existencial. </p>
+                <div class="item-meta">
+                    <span class="meta-item">📅 1956</span>
+                    <span class="meta-item">👤 Fernando Sabino</span>
+                </div>
+            </div>
+            <div class="item-actions">
+                <a href="{% url 'livros:detalhe' %}" class="btn-action btn-view" title="Ver detalhes">
+                    <span>👁️</span>
+                </a>
+                <a href="#" class="btn-action btn-edit" title="Editar">
+                    <span>✏️</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="item-card">
+            <div class="item-content">
+                <div class="item-header">
+                    <h3 class="item-title">A Seleção</h3>
+                    <span class="item-badge">Romance estadunidense</span>
+                </div>
+                <p class="item-description">A história acompanha America Singer, uma jovem de uma sociedade dividida por castas em um país chamado Illéa. Ela é sorteada para competir pelo coração do Príncipe Maxon e se tornar a próxima rainha.</p>
+                <div class="item-meta">
+                    <span class="meta-item">📅 2012</span>
+                    <span class="meta-item">👤 Kiera Cass</span>
+                </div>
+            </div>
+            <div class="item-actions">
+                <a href="{% url 'livros:detalhe' %}" class="btn-action btn-view" title="Ver detalhes">
+                    <span>👁️</span>
+                </a>
+                <a href="#" class="btn-action btn-edit" title="Editar">
+                    <span>✏️</span>
+                </a>
+            </div>
+        </div>
+        <!-- Mais itens devem ser gerados dinamicamente com loop -->
+    </div>
+{% endblock content %}
