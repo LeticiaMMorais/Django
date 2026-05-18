@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Detalhes do livro{% endblock title %}
+{% block extrahead %}
+    <link rel="stylesheet" href="{% static 'livros/css/detalhe.css' %}">
+{% endblock extrahead %}
+
+{% block content %}
+    <div class="content-header">
+        <div class="breadcrumb">
+            <a href="#">Início</a>
+            <span class="breadcrumb-separator">/</span>
+            <a href="#">Lista</a>
+            <span class="breadcrumb-separator">/</span>
+            <span class="breadcrumb-current">Detalhes</span>
+        </div>
+    </div>
+
+    <div class="detail-container">
+        <div class="detail-hero">
+            <div class="detail-hero-content">
+                <h1 class="detail-title">O Alquimista</h1>
+                <span class="detail-badge">Romance brasileiro</span>
+            </div>
+            <div class="detail-hero-actions">
+                <button class="btn btn-secondary">✏️ Editar</button>
+                <button class="btn btn-danger">🗑️ Excluir</button>
+            </div>
+        </div>
+
+        <div class="detail-content">
+            <div class="detail-section">
+                <h3 class="section-title">
+                    <span class="section-icon">📋</span>
+                    Informações Principais
+                </h3>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <span class="info-label">Editora</span>
+                        <span class="info-value">Paralela</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Páginas</span>
+                        <span class="info-value">208</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">ISBN</span>
+                        <span class="info-value">	9788584390670</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">País</span>
+                        <span class="info-value">Brasil</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="detail-section">
+                <h3 class="section-title">
+                    <span class="section-icon">📝</span>
+                    Descrição
+                </h3>
+                <div class="description-box">
+                    <p>
+                        O Alquimista segue a jornada de um pastor andaluz chamado Santiago. Acreditando em um sonho recorrente de ser profético, ele decide viajar para uma adivinha Romani em uma cidade próxima para descobrir seu significado. A mulher interpreta o sonho como uma profecia dizendo ao menino que há um tesouro nas pirâmides no Egito. </p>
+                        <p>
+No início de sua jornada, ele encontra um velho rei, cujo nome era Melquisedeque, que lhe diz para vender suas ovelhas para viajar para o Egito e introduz a ideia de uma Lenda Pessoal. Sua Lenda Pessoal é o que você sempre quis realizar. Todos, quando são jovens, sabem o que é a sua "Lenda Pessoal". Ele acrescenta que "quando você quer algo, todo o universo conspira para ajudá-lo a alcançá-lo". Este é o tema central do livro.</p>
+<p>
+Ao longo do caminho, o menino encontra um inglês que veio em busca de um Alquimista e continua suas viagens com ele. Eles viajam pelo Saara e durante sua viagem, Santiago se encontra e se apaixona por uma bela mulher árabe chamada Fátima, que reside com seu clã perto de um oásis. Ele pede a Fátima para se casar com ele, mas ela diz que só vai casar com ele depois de ele completar sua jornada e encontrar seus tesouros. Ele fica perplexo com isso, mas depois descobre que o verdadeiro amor não vai parar nem implorar para sacrificar a sua Lenda Pessoal, e se isso acontecer, não é amor verdadeiro.
+</p>
+<p>
+O menino então encontra um alquimista que também o ensina sobre Lendas Pessoais. Ele diz que as pessoas querem encontrar apenas o tesouro de suas Lendas Pessoais, mas não a própria Lenda Pessoal. O menino se sente inseguro sobre si mesmo enquanto escuta os ensinamentos do alquimista. O alquimista afirma: "Aqueles que não entenderem suas Lendas Pessoais não conseguirão compreender seus ensinamentos". É também afirmado que o tesouro é mais digno do que o ouro. O tema principal recorre através do romance, "Quando uma pessoa realmente deseja alguma coisa, todo o universo conspira para ajudar essa pessoa a realizar seu sonho".
+                    </p>
+                </div>
+            </div>
+            <!--
+            <div class="detail-section">
+                <h3 class="section-title">
+                    <span class="section-icon">ℹ️</span>
+                    Informações Adicionais
+                </h3>
+                <ul class="info-list">
+                    <li>Informação adicional 1</li>
+                    <li>Informação adicional 2</li>
+                    <li>Informação adicional 3</li>
+                </ul>
+            </div>-->
+        </div>
+
+        <div class="detail-footer">
+            <a href="{% url 'livros:lista' %}" class="btn btn-outline">← Voltar para Lista</a>
+        </div>
+    </div>
+{% endblock content %}
