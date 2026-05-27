@@ -1,7 +1,7 @@
 from django.urls import path
 
 
-import alunos.views as views
+import PI.e1.gestao_escolar.alunos.views as views
 
 app_name = 'alunos'
 

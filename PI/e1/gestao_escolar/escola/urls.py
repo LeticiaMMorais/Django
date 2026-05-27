@@ -17,7 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-import escola.views as views
+import PI.e1.gestao_escolar.escola.views as views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
