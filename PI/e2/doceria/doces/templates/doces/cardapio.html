@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<section>
+
+<div class="container">
+
+    <h2 class="titulo">
+        Nosso Cardápio
+    </h2>
+
+    <div class="cards">
+        {% for p in produtos %}
+            <div class="card">
+                <h3>{{ p.nome }}</h3>
+                <p>{{ p.descricao }}</p>
+                {% if p.preco < 50 %}
+                    <div class="preco" style="color: cadetblue;">{{ p.preco }}</div>
+                {% else %}
+                    <div class="preco">{{ p.preco }}</div>
+                {% endif %}
+            </div>
+        {% endfor %}
+    </div>
+
+</div>
+
+</section>
+
+{% endblock content %}

@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="hero">
+
+    <div class="container">
+
+        <div class="hero-content">
+            <div>
+                <h1>
+                Momentos doces merecem sabores inesquecíveis.
+                </h1>
+
+                <p>
+
+                Na Sweet Dreams, cada receita é preparada artesanalmente,
+                misturando tradição, carinho e ingredientes selecionados.
+                Dos brownies aos bolos especiais, queremos transformar
+                cada visita em uma lembrança deliciosa.
+
+                </p>
+
+                <a href="{% url 'doces:cardapio' %}"
+                class="btn">
+
+                Conheça nossos doces
+
+                </a>
+
+            </div>
+
+            <div class="hero-image">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="sobre">
+
+    <div class="container">
+
+        <h2 class="titulo">
+
+        Fátima Costa
+
+        </h2>
+
+        <p>
+
+        A confeitaria nasceu do sonho de compartilhar momentos felizes
+        através dos doces. Com anos de dedicação e paixão pela cozinha,
+        cada sobremesa é produzida artesanalmente, buscando equilibrar
+        sabores clássicos e novas experiências.
+
+        </p>
+
+    </div>
+
+</section>
+
+<section>
+
+    <div class="container">
+
+        <h2 class="titulo">
+
+        Algumas Delícias
+
+        </h2>
+
+        <div class="cards">
+            {% for p in produtos %}
+                <div class="card">
+                    <h3>{{ p.nome }}</h3>
+                    <p>{{ p.descricao }}</p>
+                </div>
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+</section>
+{% endblock content %}

@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Sweet Dreams{% endblock title %}</title>
+    <link rel="stylesheet"
+    href="{% static 'css/style.css' %}">
+    {% block extra_head %}
+    {% endblock extra_head %}
+
+</head>
+
+<body>
+    <header>
+
+        <div class="container">
+
+            <nav>
+
+                <div class="logo">
+                    {{ nome_loja }}  
+                </div>
+
+                <div class="menu">
+
+                    <a href="{% url 'core:home' %}">Home</a>
+
+                    <a href="{% url 'doces:cardapio' %}">Cardápio</a>
+
+                    <a href="{% url 'core:sobre_nos' %}">Localização</a>
+
+                </div>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+    {% block content %}
+    
+    {% endblock content %}
+
+    <footer>
+    <h2>Sweet Dreams</h2>
+    <p>Transformando momentos em doces lembranças.</p>
+    </footer>
+
+</body>
+
+</html>
