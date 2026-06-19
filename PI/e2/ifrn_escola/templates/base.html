@@ -1,0 +1,42 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}IFRN{% endblock title %}</title>
+    <style>
+        body{
+            font-family: cursive;
+        }
+        a, a:visited, a:active {
+            color: green;
+            text-decoration: none;
+        }
+        a:hover, a:focus{
+            text-decoration:underline;
+        }
+    </style>
+    {% block extra_head %}
+    {% endblock extra_head %}
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{% url 'index' %}">Home</a></li>
+                <li><a href="{% url 'lista_disciplinas' %}">Lista das disciplinas</a></li>
+                <li><a href="{% url 'autorizacao' %}">Autorização</a></li>
+                <li><a href="{% url 'biblioteca' %}">Biblioteca do IFRN</a></li>
+                <li><a href="{% url 'prioridade' %}">Prioridade</a></li>
+                <li><a href="{% url 'lista_alunos' %}">Lista de alunos</a></li>
+                <li><a href="{% url 'alerta' %}">Alerta</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    {% block content %}
+    {% endblock content %}
+</body>
+</html>

@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <h1>Autorização</h1>
+    {% if autorizado %}
+        <p>Acesso Concedido</p>
+    {% else %}
+        <p>Acesso Negado</p>
+    {% endif %}
+{% endblock content %}

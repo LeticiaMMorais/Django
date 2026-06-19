@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <h1>Prioridade</h1>
+    <p>O nível de prioridade é 
+        {% if nivel_prioridade == 1 %}
+            baixo.
+        {% elif nivel_prioridade == 2 %}
+            médio.
+        {% elif nivel_prioridade == 3 %}
+            alto.
+        {% else %}
+            indefinido.
+        {% endif %}
+    </p>
+{% endblock content %}

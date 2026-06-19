@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <h1>{{ titulo }}</h1>
+    <ul>
+        <li>Autor: {{ autor }}</li>
+        <li>Ano de publicação: {{ ano }}</li>
+    </ul>
+    <h2>Descrição</h2>
+    <p>{{ descricao }}</p>
+
+{% endblock content %}

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <h1>Biblioteca IFRN</h1>
+    
+    <h2>Livros</h2>
+    
+    <ul>
+        {% for livro in livros %}
+            <li>
+                <strong>{{ livro.titulo }}</strong> | {{ livro.autor }} | {{ livro.ano }}
+                | <a href="{% url 'detalhes_livro' livro.id %}">Detalhes do livro</a>
+            </li>
+        {% empty %}
+            <p>Não há livros disponíveis na biblioteca</p>
+        {% endfor %}
+    </ul>
+
+{% endblock content %}

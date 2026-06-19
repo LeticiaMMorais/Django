@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_head %}
+    <style>
+        
+        .alerta {
+            margin: 0;
+            padding: 1rem;
+            background-color: rgba(255, 0, 0, 0.5);
+            color: white;
+            font-size: 2rem;
+            font-weight: 700;
+        }
+    </style>
+{% endblock extra_head %}
+
+{% block content %}
+    <h1>Alerta</h1>
+    {% if mostrar_alerta %}
+        <div class="alerta">
+            <p>Isso é um alertaaa!!!</p>
+        </div>
+    {% else %}
+        <p>Não há um alerta a ser mostrado</p>
+    {% endif %}
+{% endblock content%}

@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <h1>Disciplinas</h1>
+    <ul>
+        {% for disciplina in disciplinas %}
+            <li>{{ disciplina }}</li>
+        {% empty %}
+            <p>Nenhuma disciplina ofertada neste semestre</p>
+        {% endfor %}
+    </ul>
+        
+{% endblock content %}

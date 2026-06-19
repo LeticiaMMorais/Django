@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_head %}
+    <style>
+        table, th, td {
+            border: 1px gray solid;
+            border-collapse: collapse;
+        }
+
+        td, th {
+            text-align: center;
+            padding: 5px;
+        }
+    </style>
+{% endblock extra_head %}
+
+{% block content %}
+    <h1>Lista de alunos</h1>
+    <table>
+        <tr style="text-align: center;">
+            <th>Nº</th>
+            <th>Nome</th>
+            <th>Matrícula</th>
+        </tr>
+        
+        {% for aluno in lista_alunos %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ aluno.nome }}</td>
+                <td>{{ aluno.matricula }}</td>
+            </tr>
+        {% endfor %}
+
+    </table>
+{% endblock content %}
