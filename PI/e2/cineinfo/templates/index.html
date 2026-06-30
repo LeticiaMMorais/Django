@@ -1,0 +1,28 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineInfo</title>
+</head>
+<body>
+    <h1>CineInfo</h1>
+    <p>Seja bem-vindo ao Cine Info!</p>
+    <p>Estes são os filmes que temos disponíveis</p>
+
+    <ul>
+        {% for filme in filmes %}
+            <li>
+                <div class="card">
+                    <h2>Título: {{ filme.titulo }}</h2>
+                    <p>Ano de lançamento: {{ filme.ano }}</p>
+                    <p>Sinopse:</p>
+                    <p>{{ filme.sinopse }}</p>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
