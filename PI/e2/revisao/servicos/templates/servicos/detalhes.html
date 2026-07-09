@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{%  block content %}
+<main>
+    <div class="detalhes">
+        <h1>{{ servico.nome_servico }}</h1>
+
+        <div class="ficha">
+            <h2>Ficha Técnica</h2>
+            
+            <br>
+
+            <p><strong>Profissional:</strong> {{ servico.responsavel }}</p>
+
+            <p><strong>Duração:</strong> {{ servico.tempo_estimado }}</p>
+
+            <p><strong>Valor:</strong> R$ 90,00</p>
+
+            <br>
+
+            <h3>Descrição</h3>
+            <p>
+                {{ servico.descricao }}
+            </p>
+
+        </div>
+
+    </div>
+
+</main>
+{% endblock content %}

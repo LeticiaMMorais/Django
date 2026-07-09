@@ -1,0 +1,169 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#f4f7fa;
+    color:#333;
+}
+
+header{
+    background:#008c95;
+    color:white;
+    padding:20px 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo a{
+    text-decoration:none;
+    color:white;
+    font-size:30px;
+    font-weight:bold;
+}
+
+.container{
+    display:flex;
+    min-height:calc(100vh - 180px);
+}
+
+aside{
+    width:220px;
+    background:#0d4b5a;
+    padding:30px 20px;
+}
+
+aside ul{
+    list-style:none;
+}
+
+aside li{
+    margin-bottom:15px;
+}
+
+aside a{
+    color:white;
+    text-decoration:none;
+    display:block;
+    padding:12px;
+    border-radius:8px;
+    transition:.3s;
+}
+
+aside a:hover{
+    background:#17b6c3;
+}
+
+main{
+    flex:1;
+    padding:40px;
+}
+
+.hero{
+    background:linear-gradient(135deg,#7ce5ee,#aef5e4);
+    padding:70px;
+    border-radius:15px;
+    text-align:center;
+}
+
+.hero h1{
+    font-size:50px;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:20px;
+    margin-bottom:30px;
+}
+
+.botao{
+    background:#008c95;
+    color:white;
+    text-decoration:none;
+    padding:15px 30px;
+    border-radius:30px;
+}
+
+section{
+    margin-top:50px;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:white;
+    padding:25px;
+    border-radius:10px;
+    box-shadow:0 4px 10px rgba(0,0,0,.08);
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:white;
+}
+
+th{
+    background:#008c95;
+    color:white;
+}
+
+th,td{
+    padding:15px;
+    border:1px solid #ddd;
+    text-align:center;
+}
+
+tr:nth-child(even){
+    background:#f8f8f8;
+}
+
+tr:hover{
+    background:#eefcff;
+}
+
+.detalhes{
+    background:white;
+    padding:40px;
+    border-radius:12px;
+}
+
+.preco{
+    color:#009966;
+    font-size:36px;
+    font-weight:bold;
+    margin:20px 0;
+}
+
+.ficha{
+    background:#eefcff;
+    padding:25px;
+    border-radius:10px;
+    margin-top:25px;
+}
+
+footer{
+    background:#222;
+    color:white;
+    padding:30px;
+}
+
+footer h3{
+    margin-bottom:15px;
+}
+
+footer ul{
+    list-style:none;
+}
+
+footer li{
+    margin:8px 0;
+}

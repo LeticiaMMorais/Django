@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<main>
+
+    <h1>Lista de Serviços</h1>
+
+    <br>
+
+    <table>
+
+        <tr>
+            <th>Detalhes</th>
+            <th>ID</th>
+            <th>Nome do Serviço</th>
+            <th>Profissional Responsável</th>
+            <th>Tempo Estimado</th>
+        </tr>
+        {% for servico in servicos %}
+            <tr>
+                <td><a href="{% url 'servicos:detalhes' servico.id %}">Detalhes</a></td>
+                <td>{{ servico.id }}</td>
+                <td>{{ servico.nome_servico }}</td>
+                <td>{{ servico.responsavel }}</td>
+                <td>{{ servico.tempo_estimado }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+
+</main>
+{% endblock content %}
