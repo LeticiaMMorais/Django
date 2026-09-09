@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Portal Escolar — Categorias
+{% endblock title %}
+
+{% block content %}
+<form class="caixa-busca" action="categorias.html" method="get">
+        <input type="search" name="q" placeholder="Buscar categorias...">
+        <button type="submit">Buscar</button>
+      </form>
+
+      <h1 class="titulo-pagina">Listagem de Categorias</h1>
+
+      <table class="tabela">
+        <thead>
+          <tr>
+            <th>Nome</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for cat in categorias %}
+          <tr><td><a href="{% url 'noticias:categoria_detalhes' cat.id %}">{{ cat.nome }}</a></td></tr>
+            {% endfor %}
+        </tbody>
+      </table>
+{% endblock content %}

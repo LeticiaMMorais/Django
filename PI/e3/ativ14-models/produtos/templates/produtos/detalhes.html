@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block links %}
+
+  <link rel="stylesheet" href="produtos/detalhes.css">
+
+{% endblock links %}
+
+{% block main %}
+    <h2>Detalhes do Item</h2>
+
+    <div class="cartao-detalhes">
+      <a href="{% url 'produtos:listaProdutos' %}" class="voltar">&larr; Voltar ao catálogo</a>
+
+      <ul class="lista-detalhes">
+        <li>
+          <span class="rotulo">Nome:</span>
+          <span class="valor">{{ item.nome }}</span>
+        </li>
+        <li>
+          <span class="rotulo">Categoria:</span>
+          <span class="valor">{{ item.categoria }}</span>
+        </li>
+        <li>
+          <span class="rotulo">Quantidade:</span>
+          <span class="valor">{{ item.quantidade }}</span>
+        </li>
+        <li>
+          <span class="rotulo">Lote:</span>
+          <span class="valor">{{ item.lote }}</span>
+        </li>
+      </ul>
+    </div>
+{% endblock main %}

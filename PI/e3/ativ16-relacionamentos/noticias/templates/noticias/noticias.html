@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Portal Escolar — Notícias
+{% endblock title %}
+
+{% block content %}
+      <form class="caixa-busca" action="noticias.html" method="get">
+        <input type="search" name="q" placeholder="Buscar notícias...">
+        <button type="submit">Buscar</button>
+      </form>
+
+      <h1 class="titulo-pagina">Listagem de Notícias</h1>
+
+      <table class="tabela">
+        <thead>
+          <tr>
+            <th>Título</th>
+            <th>Categoria</th>
+            <th>Tags</th>
+          </tr>
+        </thead>
+        <tbody>
+            
+            {% for noticia in noticias %}
+          <tr>
+            <td><a href="{% url 'noticias:inicio' %}">{{ noticia.titulo }}</a></td>
+            <td><a href="{% url 'noticias:categoria_detalhes' noticia.categoria.id %}">{{ noticia.categoria }}</a></td>
+            <td>
+                {% for t in noticia.tag.all %}
+              <a class="etiqueta" href="{% url 'noticias:tag_detalhes' t.id %}">{{ t }}</a>
+                {% endfor %}
+            </td>
+          </tr>
+          {% endfor %}
+
+        </tbody>
+      </table>
+{% endblock content %}

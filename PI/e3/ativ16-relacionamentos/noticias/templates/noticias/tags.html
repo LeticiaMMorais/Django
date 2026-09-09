@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Portal Escolar — Tags{% endblock title %}
+
+{% block content %}
+      <form class="caixa-busca" action="tags.html" method="get">
+        <input type="search" name="q" placeholder="Buscar tags...">
+        <button type="submit">Buscar</button>
+      </form>
+
+      <h1 class="titulo-pagina">Listagem de Tags</h1>
+
+      <table class="tabela">
+        <thead>
+          <tr>
+            <th>Título</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for tag in tags %}
+          <tr><td><a href="{% url 'noticias:tag_detalhes' tag.id %}">{{ tag }}</a></td></tr>
+            {% endfor %}
+
+        </tbody>
+      </table>
+{% endblock content %}

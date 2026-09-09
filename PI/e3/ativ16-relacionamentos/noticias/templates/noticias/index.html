@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <form class="caixa-busca" action="noticias.html" method="get">
+        <input type="search" name="q" placeholder="Buscar notícias...">
+        <button type="submit">Buscar</button>
+    </form>
+    <h1 class="titulo-pagina">Últimas Notícias</h1>
+
+    {% for noticia in noticias %}
+    <article class="noticia-item">
+        <div class="noticia-info">
+            <h2 class="">{{ noticia.titulo }}</h2>
+            <p class="noticia-meta">
+            Categoria: <a href="{% url 'noticias:categoria_detalhes' noticia.categoria.id %}">{{ noticia.categoria }}</a> ·
+            
+            Tags:
+            {% for t in noticia.tag.all %} 
+            <a class="etiqueta" href="{% url 'noticias:tag_detalhes' t.id %}">{{ t }}</a>
+            {% endfor %}
+
+            </p>
+        </div>
+    </article>
+    {% endfor %}
+
+{% endblock content %}

@@ -1,0 +1,73 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}Portal Escolar — Página Inicial{% endblock title %}</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  {% block extra_head %}
+  {% endblock extra_head %}
+</head>
+<body>
+
+  <!-- Cabeçalho -->
+  <header class="cabecalho">
+    <div class="logo"><a href="{% url 'noticias:inicio' %}">PORTAL ESCOLAR</a></div>
+    <nav class="menu-principal">
+      <ul>
+        <li><a href="{% url 'noticias:inicio' %}">Início</a></li>
+        <li><a href="{% url 'noticias:noticias' %}">Notícias</a></li>
+        <li><a href="{% url 'noticias:categorias' %}">Categorias</a></li>
+        <li><a href="{% url 'noticias:tags' %}">Tags</a></li>
+        <li><a href="{% url 'noticias:inicio' %}">Perfil</a></li>
+      </ul>
+    </nav>
+    <div class="area-login"><a href="{% url 'noticias:inicio' %}">Entrar</a></div>
+  </header>
+
+  <!-- Estrutura em 3 colunas -->
+  <div class="container">
+
+    <!-- Barra lateral esquerda -->
+    <aside class="barra-lateral">
+      <h2>Sua conta</h2>
+      <ul>
+        <li><a href="{% url 'noticias:inicio' %}">Meu perfil</a></li>
+        <li><a href="{% url 'noticias:inicio' %}">Todas as notícias</a></li>
+        <li><a href="{% url 'noticias:categorias' %}">Categorias</a></li>
+        <li><a href="{% url 'noticias:tags' %}">Tags</a></li>
+        <li><a href="#">Configurações</a></li>
+        <li><a href="#">Sair</a></li>
+      </ul>
+    </aside>
+
+    <!-- Conteúdo principal -->
+    <main class="conteudo">
+        {% block content %}
+
+        {% endblock content %}
+    </main>
+
+    <!-- Barra lateral direita -->
+    <aside class="coluna-direita">
+      <div class="bloco">
+        <h2>Publicidade</h2>
+        <div class="anuncio">Anúncio</div>
+      </div>
+      <div class="bloco">
+        <h2>Suporte ao usuário</h2>
+        <p>Precisa de ajuda? Fale com a secretaria da escola ou envie um e-mail para suporte@portalescolar.edu.br</p>
+      </div>
+    </aside>
+
+  </div>
+
+  <!-- Rodapé -->
+  <footer class="rodape">
+    <p>Portal Escolar — Atividade do curso de Informática</p>
+  </footer>
+
+</body>
+</html>

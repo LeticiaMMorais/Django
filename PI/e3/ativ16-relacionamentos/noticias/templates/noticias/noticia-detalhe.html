@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Portal Escolar — Detalhes da Notícia
+{% endblock title %}
+
+{% block content %}
+<h1 class="titulo-pagina">Detalhes da Notícia</h1>
+
+      <article class="detalhe">
+        <h1>{{ noticia.titulo }}</h1>
+
+        <p class="noticia-meta">
+          Categoria: <a class="categoria-selo" href="{% url 'noticias:categoria_detalhes' noticia.categoria.id %}">{{ noticia.categoria }}</a>
+          &nbsp;
+          Tags:
+          {% for tag in noticia.tag.all %}
+          <a class="etiqueta" href="{% url 'noticias:tag_detalhes' tag.id %}">{{ tag }}</a>
+          {% endfor %}
+        </p>
+
+        <div class="texto-noticia">
+          <p> 
+            {{ noticia.texto }}
+          </p>
+        </div>
+
+        <a class="voltar" href="{% url 'noticias:noticias' %}">&larr; Voltar para a listagem de notícias</a>
+      </article>
+{% endblock content %}
