@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Detalhes do Projeto{% endblock title %}
+
+{% block content %}
+<main class="conteudo">
+    <div class="pagina-detalhe">
+        <a class="voltar" href="{% url 'projetos:listagem-projetos' %}">← Voltar para projetos</a>
+
+        <section class="card cabecalho-detalhe">
+            <h1>{{ projeto.titulo }}</h1>
+
+            {% if projeto.descricao %}
+            <p class="descricao">
+                {{projeto.descricao}}
+            </p>
+            {% endif %}
+
+            <div class="meta">
+                <span>Categoria: {{ projeto.categoria }}</span>
+                <span>Início: {{ projeto.data_inicio }}</span>
+            </div>
+        </section>
+
+        <section class="card">
+            <div class="secao-titulo">
+                <h2>Equipe do projeto</h2>
+            </div>
+
+            <ul class="lista-alunos">
+                {% for aluno in projeto.equipe.all %}
+                <li>
+                    <a class="aluno-item" href="{% url 'projetos:detalhes-aluno' aluno.id %}">
+                        <span class="avatar">{{ aluno.nome.0 }}</span>
+                        <span>
+                            <span class="aluno-nome">{{ aluno.nome }}</span>
+                            <span class="aluno-matricula">Matrícula: {{ aluno.matricula }}</span>
+                        </span>
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </section>
+    </div>
+</main>
+{% endblock content %}

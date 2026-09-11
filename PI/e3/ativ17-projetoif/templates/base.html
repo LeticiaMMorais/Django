@@ -1,0 +1,20 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProjetoIF | {% block title %}{% endblock title %}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    {% block extra_head %}
+    {% endblock extra_head %}
+</head>
+<body>
+    {% include 'fragments/header.html' %}
+
+    {% block content %}
+    {% endblock content %}
+    
+    {% include 'fragments/footer.html' %}
+</body>
+</html>

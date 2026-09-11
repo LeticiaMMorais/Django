@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Detalhes do Aluno{% endblock title %}
+
+{% block content %}
+<main class="conteudo">
+    <div class="pagina-detalhe">
+        <a class="voltar" href="{% url 'projetos:listagem-projetos' %}">← Voltar para projetos</a>
+
+        <section class="card perfil">
+            <div class="perfil-avatar">{{ aluno.nome.0 }}</div>
+
+            <div>
+                <div class="mini-titulo" style="color: var(--verde);">Aluno • ProjetoIF</div>
+
+                <div class="dado">
+                    <span class="dado-label">Nome</span>
+                    <span class="dado-valor">{{ aluno.nome }}</span>
+                </div>
+
+                <div class="dado">
+                    <span class="dado-label">Matrícula</span>
+                    <span class="dado-valor">{{ aluno.matricula }}</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="card">
+            <div class="secao-titulo">
+                <h2>Projetos do aluno</h2>
+                <span class="contador">{{ aluno.projeto.all|length }} projetos</span>
+            </div>
+
+            <ul class="lista-projetos">
+                {% for projeto in aluno.projeto.all %}
+                <li>
+                    <a class="link-projeto" href="{% url 'projetos:detalhes-projeto' projeto.id %}">
+                        <strong>{{ projeto.titulo }}</strong>
+                        <span class="tag">{{ projeto.categoria }}</span>
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </section>
+    </div>
+</main>
+{% endblock content %}

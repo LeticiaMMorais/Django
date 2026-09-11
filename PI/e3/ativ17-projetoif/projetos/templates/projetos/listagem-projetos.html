@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Projetos{% endblock title %}
+
+{% block content %}
+<section class="hero">
+    <div class="hero-conteudo">
+        <div>
+            <div class="mini-titulo">IFRN • Extensão</div>
+            <h1>Projetos de<br>Extensão</h1>
+            <p>
+                Encontre projetos, conheça suas categorias e veja como
+                alunos do IFRN estão participando de ações que aproximam
+                a instituição da comunidade.
+            </p>
+        </div>
+
+        <div class="hero-card">
+            <h2>ProjetoIF</h2>
+            <div class="info-item"><span class="icone">📚</span> Projetos de extensão organizados por categoria</div>
+            <div class="info-item"><span class="icone">👥</span> Equipes formadas por alunos do IFRN</div>
+            <div class="info-item"><span class="icone">🌱</span> Ações voltadas para a comunidade</div>
+            <div class="info-item"><span class="icone">📊</span> Informações simples e fáceis de consultar</div>
+        </div>
+    </div>
+</section>
+
+<main class="conteudo">
+    <div class="barra">
+        <h2>Projetos cadastrados</h2>
+        <input class="busca" type="search" placeholder="🔎  Buscar projeto...">
+    </div>
+<!-- 
+    <div class="filtros">
+        {% for categoria in categorias %}
+        <button class="filtro">{{ categoria.nome }}</button>
+        {% endfor %}
+    </div> -->
+
+    <div class="tabela-box">
+        <table>
+            <thead>
+                <tr>
+                    <th>Título do projeto</th>
+                    <th>Categoria</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for projeto in projetos %}
+                    <tr>
+                        <td><a class="projeto-link" href="{% url 'projetos:detalhes-projeto' projeto.id %}">{{ projeto.titulo }}</a></td>
+                        <td><span class="tag">{{ projeto.categoria }}</span></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</main>
+{% endblock content %}
