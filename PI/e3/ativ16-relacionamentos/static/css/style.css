@@ -16,6 +16,25 @@ body {
   line-height: 1.5;
 }
 
+label, 
+.check-label {
+  margin-top: 1rem;
+}
+
+.campos-form:first-of-type > label,
+.form-checkbox label{
+  margin-top: 0;
+}
+
+form .btn {
+  margin-top: 2rem;
+}
+
+a.voltar {
+  display: block;
+  margin-bottom: 2rem;
+}
+
 /* ---------- Cabeçalho ---------- */
 .cabecalho {
   background-color: #1e3a5f;
@@ -234,6 +253,7 @@ body {
   color: #ffffff;
 }
 
+.detalhe .categoria-selo,
 .categoria-selo {
   display: inline-block;
   background-color: #1e3a5f;
@@ -398,6 +418,20 @@ body {
   font-size: 0.85rem;
   margin-top: 32px;
 }
+
+
+/* Títulos das páginas de listagem */
+.ttl-btn {
+  display: flex; 
+  justify-content: space-between;
+}
+
+.ttl-btn .btn{
+  display: block; 
+  height: fit-content; 
+  align-self: center;
+}
+
 
 /* ---------- Responsivo simples ---------- */
 @media (max-width: 900px) {

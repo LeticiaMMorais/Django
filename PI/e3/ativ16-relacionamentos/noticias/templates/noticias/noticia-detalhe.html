@@ -27,5 +27,51 @@
         </div>
 
         <a class="voltar" href="{% url 'noticias:noticias' %}">&larr; Voltar para a listagem de notícias</a>
+        <a href="{% url 'noticias:noticia_editar' noticia.id %}" class="btn btn-primary">Editar notícia</a>
+        <button  type="button"  class="btn btn-danger"  data-bs-toggle="modal"  data-bs-target="#confirmDeleteModal"  data-id="{{ noticia.id }}"
+  data-nome="{{ noticia.titulo }}">Excluir notícia</button>
       </article>
+
+
+<div class="modal fade" id="confirmDeleteModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form method="post" action="{% url 'noticias:noticia_excluir' noticia.id %}">
+        {% csrf_token %}
+        <input type="hidden" name="id" id="noticiaId">
+
+        <div class="modal-header">
+          <h5 class="modal-title">Confirmação</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <div class="modal-body">
+          <p>Você deseja realmente apagar <strong id="nomeNoticia"></strong>?</p>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Não</button>
+          <button type="submit" class="btn btn-danger">Sim</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
 {% endblock content %}
+
+{% block extra_script %}
+<script>
+  const confirmDeleteModal = document.getElementById('confirmDeleteModal');
+
+  confirmDeleteModal.addEventListener('show.bs.modal', function (event) {
+    const button = event.relatedTarget;
+    const id = button.getAttribute('data-id');
+    const nome = button.getAttribute('data-nome');
+
+    document.getElementById('noticiaId').value = id;
+    document.getElementById('nomeNoticia').textContent = nome;
+  });
+</script>
+{% endblock extra_script %}

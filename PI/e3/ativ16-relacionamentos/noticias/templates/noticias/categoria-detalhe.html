@@ -14,7 +14,7 @@
           <dd>{{ categoria.nome }}</dd>
         </dl>
 
-        <h2 class="titulo-pagina" style="font-size:1.1rem;">Notícias desta categoria (1:N)</h2>
+        <h2 class="titulo-pagina" style="font-size:1.1rem;">Notícias desta categoria</h2>
 
         {% for noticia in categoria.noticia.all %}
         <article class="noticia-item">
@@ -32,5 +32,51 @@
         {% endfor %}
 
         <a class="voltar" href="{% url 'noticias:categorias' %}">&larr; Voltar para a listagem de categorias</a>
-      </div>
+      <a href="{% url 'noticias:categoria_editar' categoria.id %}" class="btn btn-primary">Editar categoria</a>
+        <button  type="button"  class="btn btn-danger"  data-bs-toggle="modal"  data-bs-target="#confirmDeleteModal"  data-id="{{ categoria.id }}"
+  data-nome="{{ categoria.nome }}">Excluir categoria</button>
+      </article>
+
+
+<div class="modal fade" id="confirmDeleteModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form method="post" action="{% url 'noticias:categoria_excluir' categoria.id %}">
+        {% csrf_token %}
+        <input type="hidden" name="id" id="categoriaId">
+
+        <div class="modal-header">
+          <h5 class="modal-title">Confirmação</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <div class="modal-body">
+          <p>Você deseja realmente apagar <strong id="nomeCategoria"></strong>?</p>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+          <button type="submit" class="btn btn-danger">Confirmar exclusão</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
 {% endblock content %}
+
+{% block extra_script %}
+<script>
+  const confirmDeleteModal = document.getElementById('confirmDeleteModal');
+
+  confirmDeleteModal.addEventListener('show.bs.modal', function (event) {
+    const button = event.relatedTarget;
+    const id = button.getAttribute('data-id');
+    const nome = button.getAttribute('data-nome');
+
+    document.getElementById('categoriaId').value = id;
+    document.getElementById('nomeCategoria').textContent = nome;
+  });
+</script>
+{% endblock extra_script %}

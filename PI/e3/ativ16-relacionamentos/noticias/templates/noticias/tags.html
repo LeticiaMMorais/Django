@@ -4,12 +4,11 @@
 {% block title %}Portal Escolar — Tags{% endblock title %}
 
 {% block content %}
-      <form class="caixa-busca" action="tags.html" method="get">
-        <input type="search" name="q" placeholder="Buscar tags...">
-        <button type="submit">Buscar</button>
-      </form>
-
-      <h1 class="titulo-pagina">Listagem de Tags</h1>
+      
+      <div class="titulo-pagina ttl-btn">
+        <h1>Listagem de Tags</h1>
+        <a href="{% url 'noticias:tag_criar' %}" class="btn btn-primary">Criar Tag</a>
+      </div>
 
       <table class="tabela">
         <thead>

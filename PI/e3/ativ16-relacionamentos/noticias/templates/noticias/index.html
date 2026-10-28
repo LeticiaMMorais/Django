@@ -13,11 +13,21 @@
         <div class="noticia-info">
             <h2 class="">{{ noticia.titulo }}</h2>
             <p class="noticia-meta">
-            Categoria: <a href="{% url 'noticias:categoria_detalhes' noticia.categoria.id %}">{{ noticia.categoria }}</a> ·
+            {% if noticia.categoria %}
+                <a href="{% url 'noticias:categoria_detalhes' noticia.categoria.id %}">
+                    {{ noticia.categoria }}
+                </a>
+            {% else %}
+                <span>Sem categoria</span>
+            {% endif %}
             
             Tags:
-            {% for t in noticia.tag.all %} 
-            <a class="etiqueta" href="{% url 'noticias:tag_detalhes' t.id %}">{{ t }}</a>
+            {% for t in noticia.tag.all %}
+                <a class="etiqueta" href="{% url 'noticias:tag_detalhes' t.id %}">
+                    {{ t }}
+                </a>
+            {% empty %}
+                <span>Sem tags</span>
             {% endfor %}
 
             </p>

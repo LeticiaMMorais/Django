@@ -2,31 +2,31 @@ from django.db import models
 from django.contrib.auth.models import User
 
 class Categoria(models.Model):
-    nome = models.CharField(max_length=100)
+    nome = models.CharField(max_length=100, blank=False)
 
     def __str__(self):
         return self.nome
 
 
 class Tag(models.Model):
-    titulo = models.CharField(max_length=100)
+    titulo = models.CharField(max_length=100, blank=False)
 
     def __str__(self):
         return self.titulo
 
 
 class Noticia(models.Model):
-    titulo = models.CharField(max_length=300)
-    texto = models.TextField()
+    titulo = models.CharField(max_length=300, blank=False)
+    texto = models.TextField(blank=False)
     categoria = models.ForeignKey(
         Categoria,
-        null=True,
-        on_delete=models.SET_NULL,
+        on_delete=models.PROTECT,
         related_name = "noticia"
         )
     tag = models.ManyToManyField(
         Tag,
         related_name = "noticia",
+        null=True,
     )
 
 

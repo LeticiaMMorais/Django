@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Portal Escolar — {{ title_page }}
+{% endblock title %}
+
+{% block content %}
+      <h1 class="titulo-pagina">{{ title_page }}</h1>
+
+      <form action="" method="post">
+        {% csrf_token %}
+        {{ form.non_field_errors }}
+
+        <div class="campos-form">
+          <label for="{{ form.nome.id_for_label }}">Nome da categoria</label>
+          <input type="text" name="nome" placeholder="ex: Esportes" value="{{ form.nome.value|default_if_none:'' }}"  class="form-control">
+          {% if form.nome.errors %}
+            <div class="text-danger">
+              <ul class="errorlist">
+                  {% for error in form.nome.errors %}
+                      <li>{{ error }}</li>
+                  {% endfor %}
+              </ul>
+            </div>
+        {% endif %}
+        </div>
+
+        <button type="submit" class="btn btn-primary">Salvar</button>
+      </form>
+{% endblock content %}
